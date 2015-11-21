@@ -33,14 +33,14 @@ if (isset($_POST["aceptar"])) {
         $amortizacion = $p / $totalPeriodos;
 
         $fecha = date('Y-m-d');
+
         for ($i = 0; $i <= $totalPeriodos; $i++) {
             $fila = new stdClass();
 
-            
+
             if ($i == 0) {
                 $seguro = ($p * 0.005) * $per;
                 $flujo = ($p - $seguro);
-
                 $fila->periodo = $i;
                 $fila->fecha = $fecha;
                 $fila->saldo = $p;
@@ -58,8 +58,8 @@ if (isset($_POST["aceptar"])) {
                 $seguro = ($p * 0.005) * $per;
                 $flujo = (($amortizacion + $interes) + $seguro) * (-1);
 
-                
-                $fecha = strtotime('+'.$per.' month', strtotime($fecha));
+
+                $fecha = strtotime('+' . $per . ' month', strtotime($fecha));
                 $fecha = date('Y-m-d', $fecha);
 
                 $fila->periodo = $i;
@@ -76,8 +76,68 @@ if (isset($_POST["aceptar"])) {
         }
 
         die(json_encode($array));
+
+        // aqui termina la linea 1 
+        //        
+//
     } else if ($_POST["linea"] == "2") {
-        
+        $totalPeriodos = (12 / $per) * $PLAZO;
+        $amortizacion = $p / $totalPeriodos;
+// FORMULA DE AMORTIZACION DE LA LINEA 2,3.
+//        $amortizacion = $cuota_fija - $interes;
+        $fecha = date('Y-m-d');
+
+//formula para hacer CUOTA FIJA 
+        $base = 1 + $ip;
+        $exponente = $totalPeriodos;
+        $res = pow($base, $exponente);
+        $cuota_fija = $p * ($res * $ip) / ($res - 1);
+// VALIDAR SI ESTA BN   
+        for ($i = 0; $i <= $totalPeriodos; $i++) {
+            $fila = new stdClass();
+
+
+            if ($i == 0) {
+                $seguro = ($p * 0.005) * $per;
+                $flujo = ($p - $seguro);
+
+                $fila->periodo = $i;
+                $fila->fecha = $fecha;
+                $fila->saldo = $p;
+                $fila->amortizacion = 0;
+                $fila->interes = 0;
+                $fila->cuota = 0;
+                $fila->seguro = $seguro;
+                $fila->flujo = $flujo;
+
+                $array[] = $fila;
+            } else {
+//echo "interes p: $ip - $p";
+                $interes = $p * $ip;
+// $p = $p - $amortizacion;
+                $p = $p - $amortizacion;
+                $seguro = ($p * 0.005) * $per;
+// esto por -1 para que de negativo
+                $flujo = ($cuota_fija + $seguro) * (-1);
+
+// suma fecha 
+                $fecha = strtotime('+' . $per . ' month', strtotime($fecha));
+                $fecha = date('Y-m-d', $fecha);
+
+                $fila->periodo = $i;
+                $fila->fecha = $fecha;
+                $fila->saldo = $p;
+                $fila->amortizacion = $amortizacion;
+                $fila->interes = $interes;
+                $fila->cuota = $cuota_fija;
+                $fila->seguro = $seguro;
+                $fila->flujo = $flujo;
+
+                $array[] = $fila;
+            }
+        }
+
+        die(json_encode($array));
     } else if ($_POST["linea"] == "3") {
         
     }
