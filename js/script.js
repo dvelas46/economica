@@ -5,6 +5,7 @@ var nominal;
 var dias;
 
 
+
 $('input[name="periodo"]').click(function(){
 	switch($(this).val()){
 		case 'MENSUAL':

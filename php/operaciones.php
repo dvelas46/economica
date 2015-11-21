@@ -83,15 +83,13 @@ if (isset($_POST["aceptar"])) {
     } else if ($_POST["linea"] == "2") {
         $totalPeriodos = (12 / $per) * $PLAZO;
         $amortizacion = $p / $totalPeriodos;
-// FORMULA DE AMORTIZACION DE LA LINEA 2,3.
-//        $amortizacion = $cuota_fija - $interes;
         $fecha = date('Y-m-d');
 
 //formula para hacer CUOTA FIJA 
         $base = 1 + $ip;
         $exponente = $totalPeriodos;
         $res = pow($base, $exponente);
-        $cuota_fija = $p * ($res * $ip) / ($res - 1);
+        $cuota_fija = $p * (($res * $ip) / ($res - 1));
 // VALIDAR SI ESTA BN   
         for ($i = 0; $i <= $totalPeriodos; $i++) {
             $fila = new stdClass();
@@ -112,8 +110,11 @@ if (isset($_POST["aceptar"])) {
 
                 $array[] = $fila;
             } else {
-//echo "interes p: $ip - $p";
+                
                 $interes = $p * $ip;
+// FORMULA DE AMORTIZACION DE LA LINEA 2,3.
+       $amortizacion = $cuota_fija - $interes;
+//echo "interes p: $ip - $p";
 // $p = $p - $amortizacion;
                 $p = $p - $amortizacion;
                 $seguro = ($p * 0.005) * $per;
