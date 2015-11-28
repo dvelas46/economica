@@ -3,8 +3,8 @@ var interesPeriodico;
 var periodos;
 var nominal;
 var dias;
-
-
+var dtf;
+var spread;
 
 $('input[name="periodo"]').click(function(){
 	switch($(this).val()){
@@ -59,8 +59,6 @@ function calcularBasePeriodico(valor){
 	nominal = nominal*100;
 	$('#tn').val(nominal.toFixed(2));
 }
-
-
 function obtenerDatos(){
 	var datosFormularios = $('#formulario').serializeArray();
 	var datos = {};
@@ -73,6 +71,7 @@ function obtenerDatos(){
 }
 
 
+
 function enviarDatos(datos){
 	$.ajax({
 		url:'php/operaciones.php',
@@ -83,12 +82,20 @@ function enviarDatos(datos){
 		var resultados = JSON.parse(resp);
 		$.each(resultados, function(i, val){
 			$('<tr/>',{
-			html: "<td>"+val.periodo+"</td><td>"+val.fecha+"</td><td>"+val.saldo+"</td><td>"+val.amortizacion+"</td><td>"+val.interes+"</td><td>"+val.cuota+"</td><td>"+val.seguro+"</td><td>"+val.flujo+"</td>",
+			html: "<td>"+val.periodo+"</td><td>"+val.fecha+"</td><td>"+val.saldo.toFixed(2)+"</td><td>"+val.amortizacion.toFixed(2)+"</td><td>"+val.interes.toFixed(2)+"</td><td>"+val.cuota.toFixed(2)+"</td><td>"+val.seguro.toFixed(2)+"</td><td>"+val.flujo.toFixed(2)+"</td>",
 			}).appendTo('#resultados');
 		});
 	});
 }
-
+function sumar() {
+    dtf = parseFloat ($('#dtf').val());
+    spread = parseFloat($('#spread').val());
+    if(dtf!== 0 && spread!== 0){
+        var resultado = (dtf + spread);
+        $('#ea').val(resultado.toFixed(2));
+        calcularBaseEfectivo(resultado);
+    }
+}
 
 $('#btn-aceptar').click(function(){
 	obtenerDatos();
