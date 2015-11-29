@@ -8,6 +8,7 @@
         <title>Banco el Consuelo S.A.</title>
         <link href="css/style.css" rel="stylesheet" type="text/css">
         <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/format.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -111,6 +112,10 @@
                     </thead>
                     <tbody id="resultados"></tbody>
                 </table> 
+            </div>
+            
+            <div>
+                <center><button class="imprimir" name="button" id="button" onclick="imprimir()">Imprimir</button></cennter>
             </div>
 
         </div>  <!-- end .container -->

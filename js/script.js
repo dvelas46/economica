@@ -82,7 +82,15 @@ function enviarDatos(datos){
 		var resultados = JSON.parse(resp);
 		$.each(resultados, function(i, val){
 			$('<tr/>',{
-			html: "<td>"+val.periodo+"</td><td>"+val.fecha+"</td><td>"+val.saldo.toFixed(2)+"</td><td>"+val.amortizacion.toFixed(2)+"</td><td>"+val.interes.toFixed(2)+"</td><td>"+val.cuota.toFixed(2)+"</td><td>"+val.seguro.toFixed(2)+"</td><td>"+val.flujo.toFixed(2)+"</td>",
+			html: "<td>"+val.periodo+
+                                "</td><td>"+accounting.formatMoney(val.fecha)+
+                                "</td><td>"+accounting.formatMoney(val.saldo.toFixed(2))+
+                                "</td><td>"+accounting.formatMoney(val.amortizacion.toFixed(2))+
+                                "</td><td>"+accounting.formatMoney(val.interes.toFixed(2))+
+                                "</td><td>"+accounting.formatMoney(val.cuota.toFixed(2))+
+                                "</td><td>"+accounting.formatMoney(val.seguro.toFixed(2))+
+                                "</td><td>"+accounting.formatMoney(val.flujo.toFixed(2))+
+                                "</td>",
 			}).appendTo('#resultados');
 		});
 	});
@@ -95,6 +103,11 @@ function sumar() {
         $('#ea').val(resultado.toFixed(2));
         calcularBaseEfectivo(resultado);
     }
+}
+
+
+function imprimir(){
+    window.print();
 }
 
 $('#btn-aceptar').click(function(){

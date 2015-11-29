@@ -1,4 +1,57 @@
-<?php
+< ?php
+
+<!--//DTF
+var DTF;
+var Spred;
+
+
+function sumar() {
+    DTF = parseFloat($('#DTF').val());
+    Spred = parseFloat($('#Spred').val());
+    if(DTF !== 0 && Spred !== 0){
+        var resultado = (DTF + Spred);
+        $('#Efectivo_Anual').val(resultado.toFixed(2));
+        calcularBaseEfectivo(resultado);
+    }
+}
+
+
+
+
+
+// COLOR DEFINIDOS PARA LA LETRAS
+AZUL= 28306D;
+ROJO= DC1F14;        
+
+
+<td><label form="PLAZO"><font color=" 28306D"><strong>PLAZO:</strong></font> </label></td>
+                            <td>
+                                <input type="radio" name="PLAZO" value="1" required><strong>1</strong> <br>
+                                <input type="radio" name="PLAZO" value="2" required><strong>2</strong> <br>
+                                <input type="radio" name="PLAZO" value="3" required><strong>3</strong> <br>
+                                <input type="radio" name="PLAZO" value="4" required><strong>4</strong> <br>    
+                                <input type="radio" name="PLAZO" value="5" required><strong>5</strong> <br>
+                            </td>
+                            prueba para saber si el plazo funciona con typr =radio
+                            <td><input type="text"   name="PLAZO" id="PLAZO" maxlength="12" required><strong>AÑOS</strong><br></td>
+                        
+
+
+
+
+<td><label form="PLAZO"><font color=" 28306D"><strong>PLAZO:</strong></font> </label></td>
+<select name="PLAZO">
+<option value="1">1 AÑO</option>
+<option value="2">2 AÑOS</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+
+
+
+
+
 
 // CALCULAR CUOTA FIJA 
 $base= 1+$ip;
@@ -7,6 +60,12 @@ $exponente =$totalPeriodos;
 $res=pow($base,$exponente);
 
 $cuota_fija= ($res*$ip)/($res-1);
+
+
+//calcular taza nominal
+$linea3=$DTF+$SPRING;
+
+
 
 
 // CALCULAR AMORTIZACION    
@@ -88,7 +147,7 @@ $amorti_linea2=$cuota_fija-$interes;
 
 
 
-
+-->
 
 
 
