@@ -15,77 +15,77 @@
 
         <div class="container">
             <div class="content"  style="background-image:
-          url('./IMAGENES/BEC.jpg'); background-size:100% auto">
+          url('./IMAGENES/BEC1.jpg'); background-size:100% auto">
 
                 <table width="400" border='2' align="center" class="table-form">
                     <tr>
                         <td colspan="2">
                             <span class="post-title Estilo5"> <center> 
-                                    <strong>BANCO EL CONSUELO S.A</strong>
+                                    <strong><font color="DC1F14">BANCO EL CONSUELO S.A</strong></font>
                                 </center></span>
                         </td> 
                     </tr>
                     <form id="formulario">
                         <tr>
-                            <td><label form="NOMBRE"> <font color=" 28306D"><strong>NOMBRE:</strong></font> </label></td>
+                            <td><label form="NOMBRE"> <font color="28306D"><strong>NOMBRE:</strong></font> </label></td>
                             <td><input type="text"  name="NOMBRE" id="NOMBRE" maxlength="12" required></td>
                         </tr>
                         <tr>
-                            <td><label form="APELLIDO"><font color=" DC1F14"> <strong>APELLIDO:</strong></font></label></td>
+                            <td><label form="APELLIDO"><font color="28306D"> <strong>APELLIDO:</strong></font></label></td>
                             <td><input type="text"  name="APELLIDO" id="APELLIDO" maxlength="12" required></td>
                         </tr>
                         <tr>
-                            <td><label form="cc"><font color=" 28306D"><strong>CEDULA:</strong></font></label></td>
+                            <td><label form="cc"><font color="28306D"><strong>CEDULA:</strong></font></label></td>
                             <td><input type="text" name="CC" id="cc" maxlength="12" required></td>
                         </tr>
                         <tr>
-                            <td><label form="p"><font color=" DC1F14"><strong>VALOR PRESTAMO:$</strong></font></label></td>
+                            <td><label form="p"><font color="28306D"><strong>VALOR PRESTAMO:$</strong></font></label></td>
                             <td><input type="text"   name="PRESTAMO" id="p" maxlength="12" required></td>
                         </tr>
                         <tr>
-                            <td><label form="PLAZO"><font color=" 28306D"><strong>PLAZO:</strong></font> </label></td>
+                            <td><label form="PLAZO"><font color="28306D"><strong>PLAZO:</strong></font> </label></td>
                           
-                          <td><input type="text"   name="PLAZO" id="PLAZO" maxlength="12" required><strong>AÑOS</strong><br></td>
+                            <td><input type="text"   name="PLAZO" id="PLAZO" maxlength="12" required><strong><font color="28306D">AÑOS</font></strong><br></td>
                         </tr>
                         <tr>
-                            <td><strong>AMORTIZACION</strong></td>
+                            <td><strong><font color="28306D">AMORTIZACION</font></strong></td>
                             <td>
-                                <input type="radio" name="periodo" value="MENSUAL" required><strong>MENSUAL</strong> <br>
-                                <input type="radio" name="periodo" value="BIMESTRAL" required><strong>BIMESTRAL</strong> <br>
-                                <input type="radio" name="periodo" value="TRIMESTRAL" required><strong>TRIMESTRAL</strong> <br>
+                                <input type="radio" name="periodo" value="MENSUAL" required><strong><font color="28306D">MENSUAL</strong></font> <br>
+                                <input type="radio" name="periodo" value="BIMESTRAL" required><strong><font color="28306D">BIMESTRAL</strong></font> <br>
+                                <input type="radio" name="periodo" value="TRIMESTRAL" required><strong><font color="28306D">TRIMESTRAL</font></strong> <br>
                             </td>
                         </tr>
                         <tr>
-                            <td><label form="tn"><strong>TASA NOMINAL:</strong></label></td>
-                            <td><input type="text"  name="tn" id="tn" onKeyUp="calcularBaseNominal(this.value)" required>%<br></td>
+                            <td><label form="tn"><strong><font color="28306D">TASA NOMINAL:</font></strong></label></td>
+                            <td><input type="text"  name="tn" id="tn" onKeyUp="calcularBaseNominal(this.value)" required><strong><font color="28306D">%</strong></font><br></td>
                         </tr>
                         <tr>
-                            <td><label form="ea"><strong>EFECTIVO ANUAL:</strong></label></td>
-                            <td><input type="text"  name="ea" id="ea" onKeyUp="calcularBaseEfectivo(this.value)" required>%<br></td>
+                            <td><label form="ea"><strong><font color="28306D">EFECTIVO ANUAL:</font></strong></label></td>
+                            <td><input type="text"  name="ea" id="ea" onKeyUp="calcularBaseEfectivo(this.value)" required><strong><font color="28306D">%</strong></font><br></td>
                         </tr>
                         <tr>
-                            <td><label form="ip"><strong>INTERES PERIODICO:</strong></label></td>
-                            <td><input type="text"  name="ip" id="ip" onKeyUp="calcularBasePeriodico(this.value)" required>%<br></td>
+                            <td><label form="ip"><strong><font color="28306D">INTERES PERIODICO:</font></strong></label></td>
+                            <td><input type="text"  name="ip" id="ip" onKeyUp="calcularBasePeriodico(this.value)" required><strong><font color="28306D">%</strong></font><br></td>
                         </tr>
                         <tr>
-                            <td><label for="dtf"><strong>DTF</strong></label></td>
-                            <td><input type="text" name="dtf"  id="dtf" onKeyUp="sumar()"  required></td>
+                            <td><label for="dtf"><strong><font color="28306D">DTF</font></strong></label></td>
+                            <td><input type="text" name="dtf"  id="dtf" onKeyUp="sumar(this.value)"  required></td>
                         </tr>
                         <tr>
-                            <td><label for="spread"><strong>SPREAD</strong></label></td>
-                            <td><input type="text"  name="spread" id="spread" onKeyUp="sumar()"  required ></td>
+                            <td><label for="spread"><strong><font color="28306D">SPREAD</font></strong></label></td>
+                            <td><input type="text"  name="spread" id="spread" onKeyUp="sumar(this.value)"  required ></td>
                         </tr>        
                         <tr>
-                            <td><strong>LINEA</strong></td>
+                            <td><strong><font color="28306D">LINEA</font></strong></font></td>
                             <td>
-                                <input type="radio" name="linea" value="1" required><strong>LINEA 1</strong> <br>
-                                <input type="radio" name="linea" value="2" required><strong>LINEA 2</strong> <br>
-                                <input type="radio" name="linea" value="3" required><strong>LINEA 3</strong> <br>
+                                <input type="radio" name="linea" value="1" required><strong><font color="28306D">LINEA 1</font></strong> <br>
+                                <input type="radio" name="linea" value="2" required><strong><font color="28306D">LINEA 2</font></strong> <br>
+                                <input type="radio" name="linea" value="3" required><strong><font color="28306D">LINEA 3</font></strong> <br>
                             </td>
                         </tr>  
                         <tr>
                             <td colspan="2">
-                                <button type="button" id="btn-aceptar" class="btn" name="aceptar">ACEPTAR</button>
+                                <button type="button" id="btn-aceptar" class="btn" name="aceptar"><font color="DC1F14"><strong>ACEPTAR</strong></font></button>
                             </td>
                         </tr>      
                     </form>
@@ -94,20 +94,19 @@
 
             </div>    <!-- end .content -->
 
-            <div class="content"
-                  style="background-image:
-          url('./IMAGENES/BEC.jpg'); background-size:100% auto">
+            <div class="content">
+                 
                 <table border class="tabla-resultados">
                     <thead>
                         <tr>
-                            <th>PERIODO</th>
-                            <th>FECHA</th>
-                            <th>SALDO</th>
-                            <th>AMORTIZACION</th>
-                            <th>INTERESES</th>
-                            <th>CUOTA FIJA</th>
-                            <th>SEGURO</th>
-                            <th>FLUJO DE CAJA</th>
+                            <th><strong><font color="DC1F14">PERIODO</font></strong></th>
+                            <th><strong><font color="DC1F14">FECHA</font></strong></th>
+                            <th><strong><font color="DC1F14">SALDO</font></strong></th>
+                            <th><strong><font color="DC1F14">AMORTIZACION</font></strong></th>
+                            <th><strong><font color="DC1F14">INTERESES</font></strong></th>
+                            <th><strong><font color="DC1F14">CUOTA FIJA</font></strong></th>
+                            <th><strong><font color="DC1F14">SEGURO</font></strong></th>
+                            <th><strong><font color="DC1F14">FLUJO DE CAJA</font></strong></th>
                         </tr>
                     </thead>
                     <tbody id="resultados"></tbody>

@@ -15,17 +15,6 @@ if (isset($_POST["aceptar"])) {
     $ip = floatval($_POST["ip"]) / 100;
     $per;
 
-//    function val_PLAZO($var_PLAZO) {
-//        if ($PLAZO !="" &&  is_numeric($PLAZO) ) {
-//            if ($PLAZO > 1 && $PLAZO <=5 )
-//                return true;
-////'plazo' $PLAZO;
-//            else
-////echo “plazo fuera de rango”;
-//                return false;
-//        }
-//        else
-
         switch ($periodo) {
             case 'MENSUAL':
                 $per = 1;
@@ -101,7 +90,7 @@ if (isset($_POST["aceptar"])) {
             $exponente = $totalPeriodos;
             $res = pow($base, $exponente);
             $cuota_fija = $p * (($res * $ip) / ($res - 1));
-// VALIDAR SI ESTA BN   
+// VALIDA SI ESTA BN   
             for ($i = 0; $i <= $totalPeriodos; $i++) {
                 $fila = new stdClass();
 
